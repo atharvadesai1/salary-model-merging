@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import axios from 'axios';
+import './App.css'; // Import the CSS file
 
 function App() {
   const [yearsOfExperience, setYearsOfExperience] = useState('');
@@ -16,10 +17,17 @@ function App() {
   };
 
   return (
-    <div>
-      <input type="text" value={yearsOfExperience} onChange={(e) => setYearsOfExperience(e.target.value)} />
-      <button onClick={handlePredictClick}>Predict</button>
-      {predictedSalary && <p>Predicted Salary: {predictedSalary}</p>}
+    <div className="container">
+      <h1>Salary Predictor</h1><br />
+      <input 
+        type="text" 
+        value={yearsOfExperience} 
+        onChange={(e) => setYearsOfExperience(e.target.value)} 
+        className="input-field" 
+        placeholder="Enter years of experience"
+      />
+      <button onClick={handlePredictClick} className="predict-button">Predict</button>
+      {predictedSalary && <p className="predicted-salary">Predicted Salary: {predictedSalary}₹</p>}
     </div>
   );
 }
