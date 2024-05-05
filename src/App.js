@@ -1,23 +1,25 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { useState } from 'react';
+import axios from 'axios';
 
 function App() {
+  const [yearsOfExperience, setYearsOfExperience] = useState('');
+  const [predictedSalary, setPredictedSalary] = useState('');
+
+  const handlePredictClick = () => {
+    axios.post('http://127.0.0.1:5000/predict', { yearsOfExperience })
+      .then(res => {
+        setPredictedSalary(res.data.predictedSalary);
+      })
+      .catch(err => {
+        console.error('Prediction failed:', err);
+      });
+  };
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      <input type="text" value={yearsOfExperience} onChange={(e) => setYearsOfExperience(e.target.value)} />
+      <button onClick={handlePredictClick}>Predict</button>
+      {predictedSalary && <p>Predicted Salary: {predictedSalary}</p>}
     </div>
   );
 }
