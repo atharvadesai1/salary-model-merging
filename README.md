@@ -70,4 +70,7 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/d
 This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
 
 ## Image of Salary Predictor Application:
+![salry_pred2](https://github.com/atharvadesai1/salary-model-merging/assets/113234377/eb7fb8f4-2cbd-4bd0-a141-b16f37e73f4a) <br>
 ![salary_pred](https://github.com/atharvadesai1/salary-model-merging/assets/113234377/d7269699-7d25-49e5-9317-ed9d6927c527)
+
+
